@@ -36,3 +36,24 @@ function solve(meal_cost, tip_percent, tax_percent) {
     let tax = meal_cost*(tax_percent/100);
     console.log(Math.round(meal_cost+tip+tax))
 }
+
+// DAY 3
+function main() {
+    const N = parseInt(readLine().trim(), 10);
+// If  is odd, print Weird
+// If  is even and in the inclusive range of 2 to 5, print Not Weird
+// If  is even and in the inclusive range of 6 to 20, print Weird
+// If  is even and greater than 20, print Not Weird
+    if (N%2 > 0){
+        console.log("Weird");
+    }
+    else if (N%2 === 0 && ((N>=2 && N<=5) || N>20)){
+        console.log("Not Weird");
+    }
+    else if (N%2 === 0 && N>=6 && N<=20){
+        console.log("Weird");
+    }
+    // else if (N%2 === 0 && N>=6 && N<=20){
+    //     console.log("Not Weird");
+    // }
+}

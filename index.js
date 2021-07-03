@@ -94,10 +94,15 @@ function main() {
 }
 
 // DAY 6
-function main() {
-    const n = parseInt(readLine().trim(), 10);
-    for (let i=1; i<=10; i++){
-        console.log(`${n} x ${i} = ${n*i}`);
-    }
-}
+function processData(input) {
+    //Enter your code here
+    input.split('\n').slice(1).forEach(el => {
+        var odd = "";
+        var even = "";
+        el.split('').forEach((el,i)=>{
+            (i%2==0 || i==0) ? even+=el : odd+=el;
+        })
+    console.log(even+" "+odd)
+    })
+} 
 

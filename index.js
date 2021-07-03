@@ -106,3 +106,12 @@ function processData(input) {
     })
 } 
 
+// DAY 7
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+
+    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    let str = "";
+    arr.reverse().forEach(el => {str+=el+' '})
+    console.log(str)
+}

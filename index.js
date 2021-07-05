@@ -115,3 +115,26 @@ function main() {
     arr.reverse().forEach(el => {str+=el+' '})
     console.log(str)
 }
+
+// DAY 8
+function processData(input) {
+    //Enter your code here
+    // console.log(input.split('\n'))
+    let arr = input.split('\n')
+    const n = Number(arr[0])
+    arr.splice(0,1)
+    names = arr.splice(n)
+    // obj = {}
+    // console.log(arr)
+    var kvarr = arr.map(el => el.split(' '))
+    kvmap = new Map(kvarr)
+    names.map(name => {
+        if (kvmap.has(name)){
+            console.log(`${name}=${kvmap.get(name)}`);
+        }else{
+            console.log("Not found");
+        }
+    })
+
+    // console.log(Object.keys(obj))
+} 

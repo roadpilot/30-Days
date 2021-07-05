@@ -138,3 +138,9 @@ function processData(input) {
 
     // console.log(Object.keys(obj))
 } 
+
+// DAY 9
+function factorial(n) {
+    // Write your code here
+    return (n==1) ? n : n * factorial(n-1);
+}

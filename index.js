@@ -144,3 +144,9 @@ function factorial(n) {
     // Write your code here
     return (n==1) ? n : n * factorial(n-1);
 }
+
+// DAY 10 BINARY
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+    console.log(n.toString(2).split('0').sort().reverse()[0].length)
+}

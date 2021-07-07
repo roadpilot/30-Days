@@ -150,3 +150,23 @@ function main() {
     const n = parseInt(readLine().trim(), 10);
     console.log(n.toString(2).split('0').sort().reverse()[0].length)
 }
+
+// DAY 11 2d arrays
+function main() {
+    let arr = Array(6);
+
+    for (let i = 0; i < 6; i++) {
+        arr[i] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    }
+    const HGsum = [];
+    let sum = 0;
+    for (let c = 0; c < arr.length - 2; c++) { //iterate all but last 2 columns
+        for (let r = 0; r < arr[c].length - 2; r++) { //iterate all but last 2 rows in columns
+            sum = arr[c][r] + arr[c][r+1] + arr[c][r+2] 
+                           + arr[c+1][r+1] 
+              + arr[c+2][r] + arr[c+2][r+1] + arr[c+2][r+2];
+            HGsum.push(sum);
+        }
+    }
+    console.log(HGsum.sort((a,b) => b-a)[0])
+}

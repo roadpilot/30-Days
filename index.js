@@ -170,3 +170,71 @@ function main() {
     }
     console.log(HGsum.sort((a,b) => b-a)[0])
 }
+
+// DAY 12 JS CLASS INHERITANCE
+class Student extends Person {
+    /*	
+    *   Class Constructor
+    *   
+    *   @param firstName - A string denoting the Person's first name.
+    *   @param lastName - A string denoting the Person's last name.
+    *   @param id - An integer denoting the Person's ID number.
+    *   @param scores - An array of integers denoting the Person's test scores.
+    */
+    // Write your constructor here
+    constructor(firstName, lastName, id, scores) {
+        super(firstName, lastName, id);
+        this.scores = scores
+    }  
+    /*method Name: calculate
+    *   @return A character denoting the grade.
+    */
+    // Write your method here
+    calculate() {
+        let arr = this.scores;
+        const avg = arr.reduce((a,b) => a+b, 0)/arr.length;
+        // console.log(avg)
+        switch(true) {
+            case (avg>=90):
+                return "O";
+            case (avg>=80):
+                return "E";
+            case (avg>=70):
+                return "A";
+            case (avg>=55):
+                return "P";
+            case (avg>=40):
+                return "D";
+            default:
+                return "T";
+        }
+    }
+}
+
+// DAY 13 Abstract classes
+// Declare your class here.
+class MyBook extends Book {
+    /**   
+    *   Class Constructor
+    *   
+    *   @param title The book's title.
+    *   @param author The book's author.
+    *   @param price The book's price.
+    **/
+    // Write your constructor here
+    constructor(title, author, price) {
+        super(title, author);
+        this.price = price;
+    }     
+    /**   
+    *   Method Name: display
+    *   
+    *   Print the title, author, and price in the specified format.
+    **/
+    // Write your method here
+    display = () => {
+        console.log(`Title: ${this.title}`)
+        console.log(`Author: ${this.author}`)
+        console.log(`Price: ${this.price}`)
+    }
+// End class

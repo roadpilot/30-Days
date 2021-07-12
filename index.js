@@ -263,3 +263,35 @@ d = Difference(a)
 d.computeDifference()
 
 print(d.maximumDifference)
+
+// DAY 15 LINKED LIST
+function Solution(){
+
+	this.insert=function(head,data){
+        //complete this method
+        //console.log(head,data)
+        this.head=head;
+        let nextNode= new Node(data);
+        let pointer=this.head;
+    
+        if(!this.head){
+            this.head=nextNode;
+        }
+        else {
+            pointer=this.head;
+            while(pointer.next){
+                pointer=pointer.next;
+            }
+            pointer.next=nextNode;
+        }
+        return this.head;
+    };
+
+	this.display=function(head){
+        var start=head;
+            while(start){
+                process.stdout.write(start.data+" ");
+                start=start.next;
+            }
+    };
+}

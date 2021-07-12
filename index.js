@@ -295,3 +295,19 @@ function Solution(){
             }
     };
 }
+
+// DAY 16 EXCEPTIONS
+// The logical AND expression (&&) is evaluated left to right, it is tested for possible "short-circuit" evaluation using the following rule:
+// (some falsy expression) && expr is short-circuit evaluated to the falsy expression;
+// Short circuit means that the expr part above is not evaluated, hence any side effects of doing so do not take effect (e.g., if expr is a function call, the calling never takes place). This happens because the value of the operator is already determined after the evaluation of the first operand.
+
+function main() {
+    const S = readLine();
+    try {
+        S != Number(S) && noFunction()
+        console.log(Number(S))
+    } 
+    catch {
+        console.log('Bad String')
+    }
+}

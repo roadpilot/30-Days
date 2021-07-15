@@ -376,3 +376,14 @@ function main(){
     else
         console.log("The word, "+s+", is not a palindrome.");
 }
+
+// DAY 19 AdvancedArithmetic
+    let a = parseInt(inputLines[0]) 
+    let sum = a;
+    for(let i =1; i <= a/2; i++){
+        if(a % i == 0){
+            sum += i;
+        }
+    }
+    console.log("I implemented: AdvancedArithmetic")
+    console.log(sum)
